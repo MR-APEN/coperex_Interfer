@@ -5,6 +5,7 @@ import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import reqLimiter from "../src/middlewares/request-limiter.js"
 import { swaggerDocs, swaggerUi } from "./doc.js"
+import authRoutes from "../src/auth/auth.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false}))
@@ -30,6 +31,7 @@ const middlewares = (app) => {
 }
 
 const routes = (app) => {
+    app.use("/coperexInterfer/v1/auth", authRoutes)
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 

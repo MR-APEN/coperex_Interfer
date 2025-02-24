@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "01c9efd3-1835-45b4-bb4a-1bdc1ef1fb84",
+		"name": "Coperex Interfer Javier Apen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37585551"
+	},
+	"item": [
+		{
+			"name": "Login Admin",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aapen@admin.coperex\",\r\n    \"password\": \"Apen2023$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

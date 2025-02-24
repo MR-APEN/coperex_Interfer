@@ -15,11 +15,13 @@ const swagger = {
         },
         servers:[
             {
-                url: "http://127.0.0.1:3003/coperexInterfer/v1"
+                url: "http://127.0.0.1:3004/coperexInterfer/v1"
             }
         ]
     },
-    apis:[]
+    apis:[
+        "./src/auth/*.js"
+    ]
 }
 
 const swaggerDocs = swaggerJSDoc(swagger)
