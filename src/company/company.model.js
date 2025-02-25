@@ -12,9 +12,9 @@ const companySchema = Schema({
         enum: ["FUERTE","MEDIO","BAJO"],
         required: [true, "El impacto de la empresa es requerido"]
     },
-    yearsExperience:{
+    foundingYear:{
         type: Number,
-        required: [true, "Los año de trayectoria son requeridos"],
+        required: [true, "El año de fundación de la empresa es requerido"],
         min: 0
     },
     categoryCompany:{

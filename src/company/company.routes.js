@@ -21,7 +21,7 @@ const router = Router()
  *                 type: string
  *               levelImpact:
  *                 type: string
- *               yearsExperience:
+ *               foundingYear:
  *                 type: number
  *               categoryCompany:
  *                 type: string
@@ -60,7 +60,7 @@ router.post(
  *                 type: string
  *               levelImpact:
  *                 type: string
- *               yearsExperience:
+ *               foundingYear:
  *                 type: number
  *               categoryCompany:
  *                 type: string

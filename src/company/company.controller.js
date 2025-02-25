@@ -6,10 +6,14 @@ export const createCompany = async (req, res) => {
 
         const company = await Company.create(data)
 
+        const actualYear = new Date().getFullYear()
+        const yearsExperience = actualYear - data.foundingYear
+
         return res.status(201).json({
             success: true,
             message: "Empresa agregada con exito !!!",
-            company
+            company,
+            yearsExperience
         })
     } catch (err) {
         return res.status(500).json({
@@ -27,10 +31,14 @@ export const updateCompany = async (req, res) => {
 
         const companyUpdate = await Company.findByIdAndUpdate(cid, data, {new: true})
 
+        const actualYear = new Date().getFullYear()
+        const yearsExperience = actualYear - data.foundingYear
+
         return res.status(200).json({
             success: true,
             message: "Datos de la empresa actualizado!!",
-            companyUpdate
+            companyUpdate,
+            yearsExperience
         })
 
     } catch (err) {

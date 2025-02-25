@@ -9,7 +9,7 @@ export const createCompanyValidator = [
     body("name", "El nombre es requerido").notEmpty(),
     body("name").custom(nameCompanyExist),
     body("levelImpact", "El nivel de impacto es requerido").notEmpty(),
-    body("yearsExperience", "Los años de trayectoria es requerido").notEmpty(),
+    body("foundingYear", "El año de fundación de la empresa es requerido").notEmpty(),
     body("categoryCompany", "La categoría de la empresa es requerida").notEmpty(),
     validateField,
     handleError

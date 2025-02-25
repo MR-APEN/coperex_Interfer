@@ -6,7 +6,7 @@ const router = Router()
 
 /**
  * @swagger
- * /login:
+ * /auth/login:
  *   post:
  *     summary: Inicia sesión de usuario admin
  *     tags: [Auth]
