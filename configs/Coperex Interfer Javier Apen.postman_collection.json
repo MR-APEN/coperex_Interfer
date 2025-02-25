@@ -28,6 +28,35 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Agregar empresa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkNzk4ODQxYjcyZGQzMDVjMzYzZDgiLCJpYXQiOjE3NDA0NzA2ODIsImV4cCI6MTc0MDQ3NDI4Mn0.k3MI9h8PCwVxeE0BsF6T3z18xDCB3g93r5qsMZXKKaQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"intelaf sa\",\r\n    \"levelImpact\": \"FUERTE\",\r\n    \"yearsExperience\": 12,\r\n    \"categoryCompany\": \"Tecnología\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/createCompany"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -27,6 +27,7 @@
   "homepage": "https://github.com/MR-APEN/coperex_Interfer#readme",
   "dependencies": {
     "argon2": "^0.41.1",
+    "coperex_interfer": "file:",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
