@@ -6,3 +6,10 @@ export const nameCompanyExist = async (name= "") => {
         throw new Error(`El nombre de la empresa: ${name} ya fue registrado`)
     }
 }
+
+export const companyExist = async (cid= "") => {
+    const exist = await Company.findById(cid)
+    if(!exist) {
+        throw new Error(`No se encontro una empresa con el ID: ${cid}`)
+    }
+}

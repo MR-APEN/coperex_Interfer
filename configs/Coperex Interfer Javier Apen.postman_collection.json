@@ -38,7 +38,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkNzk4ODQxYjcyZGQzMDVjMzYzZDgiLCJpYXQiOjE3NDA0NzA2ODIsImV4cCI6MTc0MDQ3NDI4Mn0.k3MI9h8PCwVxeE0BsF6T3z18xDCB3g93r5qsMZXKKaQ"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JjZjA2YWFmZmRiZDEzOGNhZTdlZDYiLCJpYXQiOjE3NDA1MjE3MzcsImV4cCI6MTc0MDUyNTMzN30.oClqLBdkWPiz-6xmSybLWvmIzJJgTZmck1xG6sZQb_s"
 							}
 						},
 						"method": "POST",
@@ -53,6 +53,53 @@
 							}
 						},
 						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/createCompany"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar empresa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JjZjA2YWFmZmRiZDEzOGNhZTdlZDYiLCJpYXQiOjE3NDA1MjE3MzcsImV4cCI6MTc0MDUyNTMzN30.oClqLBdkWPiz-6xmSybLWvmIzJJgTZmck1xG6sZQb_s"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apen y Asociados SA\",\r\n    \"levelImpact\": \"MEDIO\",\r\n    \"yearsExperience\": 2,\r\n    \"categoryCompany\": \"Auditoria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3004/coperexInterfer/v1/company/updateCompany/:cid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3004",
+							"path": [
+								"coperexInterfer",
+								"v1",
+								"company",
+								"updateCompany",
+								":cid"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "67be4127ca6cb0e923c0165c"
+								}
+							]
+						}
 					},
 					"response": []
 				}

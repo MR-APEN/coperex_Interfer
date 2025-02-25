@@ -19,3 +19,25 @@ export const createCompany = async (req, res) => {
         })
     }
 }
+
+export const updateCompany = async (req, res) => {
+    try {
+        const { cid } = req.params
+        const data = req.body
+
+        const companyUpdate = await Company.findByIdAndUpdate(cid, data, {new: true})
+
+        return res.status(200).json({
+            success: true,
+            message: "Datos de la empresa actualizado!!",
+            companyUpdate
+        })
+
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al actualizar empresa :(",
+            error: err.message
+        })
+    }
+}

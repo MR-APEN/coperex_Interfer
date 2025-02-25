@@ -24,7 +24,7 @@ const router = Router()
  *     responses:
  *       200:
  *         description: Inicio de sesión exitoso
- *       400:
+ *       500:
  *         description: Error en la solicitud
  */
 router.post(

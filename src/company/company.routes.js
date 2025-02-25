@@ -1,12 +1,12 @@
 import { Router } from "express"
-import { createCompany } from "./company.controller.js"
-import { createCompanyValidator } from "../middlewares/company-validator.js"
+import { createCompany, updateCompany } from "./company.controller.js"
+import { createCompanyValidator, updateCompanyValidator } from "../middlewares/company-validator.js"
 
 const router = Router()
 
 /**
  * @swagger
- * /createCompany:
+ * /company/createCompany:
  *   post:
  *     summary: Agrega una empresa
  *     tags: [Company]
@@ -28,7 +28,7 @@ const router = Router()
  *     responses:
  *       200:
  *         description: Empresa agregada exitosamente
- *       400:
+ *       500:
  *         description: Error en la solicitud
  */
 router.post(
@@ -36,5 +36,41 @@ router.post(
     createCompanyValidator, 
     createCompany
 )
+
+/**
+ * @swagger
+ * /company/updateCompany/:cid:
+ *   put:
+ *     summary: Actualiza datos de la empresa
+ *     tags: [Company]
+ *     parameters:
+ *       - in: path
+ *         name: cid
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               levelImpact:
+ *                 type: string
+ *               yearsExperience:
+ *                 type: number
+ *               categoryCompany:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Empresa actualizada exitosamente
+ *       500:
+ *         description: Error en la solicitud
+ */
+router.put("/updateCompany/:cid", updateCompanyValidator,updateCompany)
+
 
 export default router
