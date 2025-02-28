@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createCompany, updateCompany, listCompanies, listByYearsCompanies, listByCategoryCompanies } from "./company.controller.js"
+import { createCompany, updateCompany, listCompanies, listByYearsCompanies, listByCategoryCompanies, listCompaniesAZ, listCompaniesZA} from "./company.controller.js"
 import { createCompanyValidator, updateCompanyValidator, listCompaniesValidator } from "../middlewares/company-validator.js"
 
 const router = Router()
@@ -77,5 +77,9 @@ router.get("/listCompany", listCompaniesValidator, listCompanies)
 router.get("/listCompanyByYearsExpierence", listCompaniesValidator, listByYearsCompanies)
 
 router.get("/listByCategoryCompanies", listCompaniesValidator, listByCategoryCompanies)
+
+router.get("/listCompaniesAZ", listCompaniesValidator, listCompaniesAZ)
+
+router.get("/listCompaniesZA", listCompaniesValidator, listCompaniesZA)
 
 export default router
