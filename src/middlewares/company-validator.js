@@ -22,3 +22,9 @@ export const updateCompanyValidator = [
     validateField,
     handleError
 ]
+
+export const listCompaniesValidator = [
+    validateJWT,
+    validateField,
+    handleError
+]

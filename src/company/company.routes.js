@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { createCompany, updateCompany, listCompanies } from "./company.controller.js"
-import { createCompanyValidator, updateCompanyValidator } from "../middlewares/company-validator.js"
+import { createCompany, updateCompany, listCompanies, listByYearsCompanies } from "./company.controller.js"
+import { createCompanyValidator, updateCompanyValidator, listCompaniesValidator } from "../middlewares/company-validator.js"
 
 const router = Router()
 
@@ -70,8 +70,10 @@ router.post(
  *       500:
  *         description: Error en la solicitud
  */
-router.put("/updateCompany/:cid", updateCompanyValidator,updateCompany)
+router.put("/updateCompany/:cid", updateCompanyValidator, updateCompany)
 
-router.get("/listCompany", listCompanies)
+router.get("/listCompany", listCompaniesValidator, listCompanies)
+
+router.get("/listCompanyByYearsExpierence", listCompaniesValidator, listByYearsCompanies)
 
 export default router
