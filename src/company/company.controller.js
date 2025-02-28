@@ -1,4 +1,4 @@
-import Company from "../company/company.model.js"
+import Company from "./company.model.js"
 import xl from "excel4node"
 import { join, dirname } from "path"
 import { fileURLToPath } from "url"
@@ -9,10 +9,17 @@ export const createCompany = async (req, res) => {
     try {
         const data = req.body
 
-        const company = await Company.create(data)
+        const company = new Company({
+            name: data.name,
+            levelImpact: data.levelImpact,
+            yearFoundation: data.yearFoundation,
+            categoryCompany: data.categoryCompany
+        })
+
+        await company.save()
 
         const actualYear = new Date().getFullYear()
-        const yearsExperience = actualYear - data.foundingYear
+        const yearsExperience = actualYear - data.yearFoundation
 
         return res.status(201).json({
             success: true,
@@ -37,7 +44,7 @@ export const updateCompany = async (req, res) => {
         const companyUpdate = await Company.findByIdAndUpdate(cid, data, {new: true})
 
         const actualYear = new Date().getFullYear()
-        const yearsExperience = actualYear - data.foundingYear
+        const yearsExperience = actualYear - data.yearFoundation
 
         return res.status(200).json({
             success: true,
@@ -56,35 +63,67 @@ export const updateCompany = async (req, res) => {
 }
 
 export const listCompanies = async (req, res) => {
-    try {
-        const wb = new xl.Workbook()
+    try {   
+        const companies = await Company.find();
+        const actualYear = new Date().getFullYear()
+        if(companies.length === 0) {
+            return res.status(404).json({
+                success: false,
+                msg: 'No se encontraron empresas.'
+            })
+        }
+        
+        const wb = new xl.Workbook(); // Crea un nuevo libro de excel
+        const ws = wb.addWorksheet('Empresas'); // Crea una hoja
+
+        const headerStyle = wb.createStyle({ // Define el estilo de celda
+            font: {
+                name: 'Arial',
+                color: '#000000',
+                size: 12,
+                bold: true
+            }
+        })
+
+        const contentStyle = wb.createStyle({
+            font: {
+                name: 'Arial',
+                color: '#000000',
+                size: 10,
+            }
+        })
+
+        ws.cell(1, 1).string('Nombre').style(headerStyle); // Agrega los encabezados a la hoja
+        ws.cell(1, 2).string('Nivel de Impacto').style(headerStyle);
+        ws.cell(1, 3).string('Año de Fundación').style(headerStyle);
+        ws.cell(1, 4).string('Categoría').style(headerStyle);
+        ws.cell(1, 5).string('Años de Experiencia').style(headerStyle);
+
+        let row = 2;
+        companies.forEach(company => { // Recorre todo el array de empresas y las agrega a la hoja
+            const yearsExperience = actualYear - company.yearFoundation
+
+            ws.cell(row, 1).string(company.name).style(contentStyle); // Agrega los datos de la empresa a la hoja
+            ws.cell(row, 2).string(company.levelImpact).style(contentStyle);
+            ws.cell(row, 3).number(company.yearFoundation).style(contentStyle);
+            ws.cell(row, 4).string(company.categoryCompany).style(contentStyle);
+            ws.cell(row, 5).number(yearsExperience).style(contentStyle);
+            row = row + 1;
+        })
+
+
         const date = new Date().getDate()
         const time = new Date().getTime()
-        const actualYear = new Date().getFullYear()
         const nombreArchivo = "Empresas_" + date + "_" + time
-        const ws = wb.addWorksheet("Companies")
-        const companies = await Company.find()    
-        ws.cell(1, 1).string("Nombre")
-        ws.cell(1, 2).string("Nivel de Impacto")
-        ws.cell(1, 3).string("Año de Fundación")
-        ws.cell(1, 4).string("Categoría")
-        ws.cell(1, 5).string("Años de Trayectoria")
-    
-        companies.forEach((Company, index) => {
-            const row = index + 2
-    
-            const yearsExperience = actualYear - Company.foundingYear
-    
-            ws.cell(row, 1).string(Company.name)
-            ws.cell(row, 2).string(Company.levelImpact)
-            ws.cell(row, 3).number(Company.foundingYear)
-            ws.cell(row, 4).string(Company.categoryCompany)
-            ws.cell(row, 5).number(yearsExperience)
-        });
-
         const excelPath = join(__dirname, "../../public/excel", nombreArchivo+".xlsx")
         
-        wb.write(nombreArchivo, res)
+        wb.write(excelPath)
+
+        return res.status(200).json({
+            success: true,
+            message: "Excel generado con exito!!",
+            excelPath
+        })
     } catch (err) {
         return res.status(500).json({
             success: false,
