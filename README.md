@@ -29,7 +29,7 @@ Al momento de generar los documentos Excel estos se crean en las carpetas `publi
 
 ## Usuarios
 
-Para esta API se crea un usuario default con el role ADMIN, por medio de este se maneja toda la API siempre cumpliendo con los requerimientos, al ejecutar por primera vez el proyecto en consola se muestra las credenciales del usuario.
+Para esta API se crea un usuario default con el role ADMIN, por medio de este se maneja toda la API siempre cumpliendo con los requerimientos, al ejecutar por primera vez el proyecto en consola se muestra las credenciales del usuario. Es necesario estar logeado con el usuario para el uso de toda la API
 
 ## Documentación Swagger
 
