@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "01c9efd3-1835-45b4-bb4a-1bdc1ef1fb84",
+		"name": "Coperex Interfer Javier Apen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37585551"
+	},
+	"item": [
+		{
+			"name": "Login Admin",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aapen@admin.coperex\",\r\n    \"password\": \"Apen2023$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Agregar empresa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"BIC\",\r\n    \"levelImpact\": \"BAJO\",\r\n    \"yearFoundation\": 2000,\r\n    \"categoryCompany\": \"Utencilios\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/createCompany"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar empresa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TecniScan\",\r\n    \"levelImpact\": \"MEDIO\",\r\n    \"yearFoundation\": 2024,\r\n    \"categoryCompany\": \"Salud\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3004/coperexInterfer/v1/company/updateCompany/:cid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3004",
+							"path": [
+								"coperexInterfer",
+								"v1",
+								"company",
+								"updateCompany",
+								":cid"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "67c2532dbc9d5c39935c4134"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar reporte",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/listCompany"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Años de Trayectoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"minYears\": 1,\r\n    \"maxYears\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/listCompanyByYearsExpierence"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar por Categorías",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryCompany\": \"Salud\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/listByCategoryCompanies"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar A-Z",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/listCompaniesAZ"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Z-A",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyMTYwY2MzNDc4Y2RjMmUwNGQ3YzgiLCJpYXQiOjE3NDA3ODgwNTAsImV4cCI6MTc0MDc5MTY1MH0.p6um_bKb-QxAoQG_89ODJLlsAP1HQUfK9zje_SmPbQw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3004/coperexInterfer/v1/company/listCompaniesZA"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

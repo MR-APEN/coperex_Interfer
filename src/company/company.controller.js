@@ -200,7 +200,7 @@ export const listByYearsCompanies = async (req, res) => {
 
         const date = new Date().getDate()
         const time = new Date().getTime()
-        const nombreArchivo = "Empresas_" + date + "_" + time
+        const nombreArchivo = "Empresas_Trayectoria_" + date + "_" + time
         const excelPath = join(__dirname, "../../public/excel", nombreArchivo+".xlsx")
         
         wb.write(excelPath)
@@ -277,7 +277,7 @@ export const listByCategoryCompanies = async (req, res) => {
 
         const date = new Date().getDate()
         const time = new Date().getTime()
-        const nombreArchivo = "Empresas_" + date + "_" + time
+        const nombreArchivo = "Empresas_Categorias_" + date + "_" + time
         const excelPath = join(__dirname, "../../public/excel", nombreArchivo+".xlsx")
         
         wb.write(excelPath)
@@ -353,7 +353,7 @@ export const listCompaniesAZ = async (req, res) => {
 
         const date = new Date().getDate()
         const time = new Date().getTime()
-        const nombreArchivo = "Empresas_" + date + "_" + time
+        const nombreArchivo = "Empresas_AZ_" + date + "_" + time
         const excelPath = join(__dirname, "../../public/excel", nombreArchivo+".xlsx")
         
         wb.write(excelPath)
@@ -429,7 +429,7 @@ export const listCompaniesZA = async (req, res) => {
 
         const date = new Date().getDate()
         const time = new Date().getTime()
-        const nombreArchivo = "Empresas_" + date + "_" + time
+        const nombreArchivo = "Empresas_ZA_" + date + "_" + time
         const excelPath = join(__dirname, "../../public/excel", nombreArchivo+".xlsx")
         
         wb.write(excelPath)

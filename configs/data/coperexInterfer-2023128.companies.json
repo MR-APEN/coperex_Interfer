@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "67c216885111c4e3d249e9e1"
+  },
+  "name": "Intelaf sa",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2010,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c216a35111c4e3d249e9e5"
+  },
+  "name": "Coca Cola",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 1998,
+  "categoryCompany": "Bebidas"
+},
+{
+  "_id": {
+    "$oid": "67c216ba5111c4e3d249e9e9"
+  },
+  "name": "Huawei",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 1995,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c231eb007d47ad0de5a43d"
+  },
+  "name": "Sony",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2020,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c23225007d47ad0de5a441"
+  },
+  "name": "Apen y Asociados",
+  "levelImpact": "BAJO",
+  "yearFoundation": 2023,
+  "categoryCompany": "Contabilidad"
+},
+{
+  "_id": {
+    "$oid": "67c23252007d47ad0de5a445"
+  },
+  "name": "Castor Pizza",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2019,
+  "categoryCompany": "Alimentos"
+},
+{
+  "_id": {
+    "$oid": "67c23290007d47ad0de5a449"
+  },
+  "name": "Distelsa",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2015,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c232ca007d47ad0de5a44d"
+  },
+  "name": "SAMSUNG",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2018,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c2330c007d47ad0de5a455"
+  },
+  "name": "Cafetalito",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2006,
+  "categoryCompany": "Alimentos"
+},
+{
+  "_id": {
+    "$oid": "67c2336f007d47ad0de5a460"
+  },
+  "name": "EcoSolutions",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2021,
+  "categoryCompany": "Ambiental"
+},
+{
+  "_id": {
+    "$oid": "67c25177bc9d5c39935c410b"
+  },
+  "name": "TechVision",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2001,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c251c4bc9d5c39935c4111"
+  },
+  "name": "EcoTools",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2010,
+  "categoryCompany": "Ambiental"
+},
+{
+  "_id": {
+    "$oid": "67c251f3bc9d5c39935c4115"
+  },
+  "name": "FastLogistics",
+  "levelImpact": "BAJO",
+  "yearFoundation": 1998,
+  "categoryCompany": "Contabilidad"
+},
+{
+  "_id": {
+    "$oid": "67c25207bc9d5c39935c4119"
+  },
+  "name": "AgroVita",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2006,
+  "categoryCompany": "Ambiental"
+},
+{
+  "_id": {
+    "$oid": "67c2521bbc9d5c39935c411d"
+  },
+  "name": "MediCarePlus",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2005,
+  "categoryCompany": "Salud"
+},
+{
+  "_id": {
+    "$oid": "67c25232bc9d5c39935c4121"
+  },
+  "name": "FoodExpress",
+  "levelImpact": "BAJO",
+  "yearFoundation": 2016,
+  "categoryCompany": "Alimentos"
+},
+{
+  "_id": {
+    "$oid": "67c25255bc9d5c39935c4125"
+  },
+  "name": "AutoSmart",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2014,
+  "categoryCompany": "Tecnología"
+},
+{
+  "_id": {
+    "$oid": "67c25265bc9d5c39935c4129"
+  },
+  "name": "GreenFuture",
+  "levelImpact": "FUERTE",
+  "yearFoundation": 2019,
+  "categoryCompany": "Ambiental"
+},
+{
+  "_id": {
+    "$oid": "67c25294bc9d5c39935c412d"
+  },
+  "name": "SoftNext",
+  "levelImpact": "BAJO",
+  "yearFoundation": 2023,
+  "categoryCompany": "Desarrollo de Software"
+},
+{
+  "_id": {
+    "$oid": "67c2532dbc9d5c39935c4134"
+  },
+  "name": "TecniScan",
+  "levelImpact": "MEDIO",
+  "yearFoundation": 2024,
+  "categoryCompany": "Salud"
+}]
