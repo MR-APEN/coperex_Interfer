@@ -25,6 +25,7 @@ Podra encontrar los endpoints de la API en la carpetas `configs/endpoints/` se e
 ## Excel
 
 Para crear los documentos Excel se utilizo la dependencia `excel4node`, solo basta con instalar las dependencias de la API y al ejecutar el controlador se crean los documentos Excel.
+Al momento de generar los documentos Excel estos se crean en las carpetas `public/excel` dentro del proyecto.
 
 ## Usuarios
 
